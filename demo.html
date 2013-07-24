@@ -3,10 +3,16 @@
 <head>
 
 <style>
+
+body {
+	text-align: center;	
+}
+
 #slideshow_shell {
 	width: 600px;
 	height: 300px;
 	overflow: hidden;
+	margin: 0 auto 0 auto;
 }
 
 	#slideshow_shell #slideshow_viewport  {
@@ -14,6 +20,7 @@
 		width: 600px;
 		height: 300px;
 		overflow: hidden;
+		text-align: left;
 	}
 	
 		#slideshow_shell #slideshow_viewport #slideshow_carousel {
@@ -36,10 +43,20 @@
 				height: 300px;
 			}
 			
+.controls {
+	width: 200px;	
+	margin: 20px auto 0 auto;
+}
+	
+.slide-trigger-prev, .slide-trigger-next {
+	width: 80px;
+	cursor: pointer;
+}
+			
 </style>
 
-<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4.1/jquery.min.js?ver=3.2.1'></script>
-<script src="juicyslide-2.3.2.min.js" type="text/javascript"></script>
+<script type='text/javascript' src='jquery.min.js'></script>
+<script src="juicyslide.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 
 $(document).ready(function() {
@@ -47,11 +64,11 @@ $(document).ready(function() {
 	/* SLIDESHOW */
 	if($("#slideshow_shell").length != 0) {
 		var myJuicySlide = new JuicySlide({
-			"interval"  : 2000,
+			"interval"  : 4000,
 			"speed" 	: 800,
 			"carousel" 	: "#slideshow_carousel",
 			"viewport" 	: "#slideshow_viewport",
-			"direction" : "b2t",
+			"direction" : "l2r",
 			"onslidechange" : function(e) { console.log("changed"); } 
 		});
 	}
@@ -80,7 +97,9 @@ $(document).ready(function() {
         </div>
       </div>
     </div>
-    <div class="slide-trigger-prev" style="float: right; clear: both;">Prev</div>
-    <div class="slide-trigger-next" style="float: right">Next</div>
+    <div class="controls">
+    	<div class="slide-trigger-prev" style="float: left; clear: both;">Prev</div>
+    	<div class="slide-trigger-next" style="float: right">Next</div>
+    </div>
 </body>
 </html>
