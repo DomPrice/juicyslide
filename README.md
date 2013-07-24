@@ -1,0 +1,4 @@
+juilyslide
+==========
+
+JQuery slideshow class
