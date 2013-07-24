@@ -1,4 +1,7 @@
-<html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
 
 <head>
 
@@ -13,6 +16,7 @@ body {
 	height: 300px;
 	overflow: hidden;
 	margin: 0 auto 0 auto;
+	padding: 0;
 }
 
 	#slideshow_shell #slideshow_viewport  {
@@ -21,12 +25,16 @@ body {
 		height: 300px;
 		overflow: hidden;
 		text-align: left;
+		margin: 0;
+		padding: 0;
 	}
 	
 		#slideshow_shell #slideshow_viewport #slideshow_carousel {
 			position: absolute;
 			width: 600px;
 			height: 300px;
+			margin: 0;
+			padding: 0;
 		}
 	
 			#slideshow_carousel .slide {
@@ -35,12 +43,21 @@ body {
 				height: 300px;
 				float: left;
 				clear: none;
+				margin: 0;
+				padding: 0;
 			}
 
 			.slide {
-				position: relative;
+				position: absolute;
 				width: 600px;
 				height: 300px;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			.slide a, .slide img{
+				margin: 0px;
+				padding: 0px;
 			}
 			
 .controls {
@@ -64,12 +81,14 @@ $(document).ready(function() {
 	/* SLIDESHOW */
 	if($("#slideshow_shell").length != 0) {
 		var myJuicySlide = new JuicySlide({
-			"interval"  : 4000,
+			"interval"  : 2000,
 			"speed" 	: 800,
 			"carousel" 	: "#slideshow_carousel",
 			"viewport" 	: "#slideshow_viewport",
 			"direction" : "l2r",
-			"onslidechange" : function(e) { console.log("changed"); } 
+			"onslidechange" : function(e) { 
+				// EXECUTE STUFF HERE
+			} 
 		});
 	}
 	
