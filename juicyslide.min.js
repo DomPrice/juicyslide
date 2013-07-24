@@ -5,7 +5,7 @@
   email: info@domprice.com
 
   USAGES:
-    juicySlide({
+    JuicySlide({
       "option":"value"
     });
 
